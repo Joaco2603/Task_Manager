@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Task Manager</h1>
+        <div class="stats">
+            <span id="total-tasks">0 tareas</span>
+            <span id="completed-tasks">0 completadas</span>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="task-form-section">
+            <form id="task-form" class="task-form">
+                <input type="text" id="task-title" name="title" placeholder="¿Qué necesitas hacer?" required>
+                <textarea id="task-description" name="description" placeholder="Descripción (opcional)"></textarea>
+                <select id="task-priority" name="priority">
+                    <option value="low">Baja</option>
+                    <option value="medium" selected>Media</option>
+                    <option value="high">Alta</option>
+                </select>
+                <input type="date" id="task-date" name="date">
+                <button type="submit">Agregar Tarea</button>
+            </form>
+        </section>
+
+        <section class="filters-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all" type="button">Todas</button>
+                <button class="filter-btn" data-filter="pending" type="button">Pendientes</button>
+                <button class="filter-btn" data-filter="completed" type="button">Completadas</button>
+            </div>
+            <input type="text" id="search-input" placeholder="Buscar tareas...">
+        </section>
+
+        <section class="tasks-section">
+            <ul id="task-list" class="task-list">
+                <!-- Las tareas se generarán dinámicamente -->
+            </ul>
+            <div id="empty-state" class="empty-state" style="display: none;">
+                <p>No tienes tareas aún. ¡Crea tu primera tarea!</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/taskManager.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
